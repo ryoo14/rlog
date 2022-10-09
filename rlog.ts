@@ -38,6 +38,6 @@ const create = (options) => {
       }
     }
   } catch (err) {
-    console.log(`Failed to create blog post. ${err.message}`);
+    console.error(`Failed to create blog post. ${err.message}`);
   }
 }
