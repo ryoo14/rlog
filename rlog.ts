@@ -4,7 +4,7 @@ import { Command, ValidationError } from "https://deno.land/x/cliffy@v0.25.2/com
 new Command()
   .name("rlog")
   .description("A command to create blog post template.")
-  .version("0.1.0")
+  .version("0.1.2")
   .command("create", "Create blog post template.")
   .option("-t, --type <post-type>", "The post type(blog or contents).", {
     value: (value: string): string => {
