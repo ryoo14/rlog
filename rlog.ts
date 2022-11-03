@@ -1,10 +1,11 @@
 import { blogEntry, contentEntry, convertDateToString, createEntryFile } from "./util.ts";
-import { Command, ValidationError } from "https://deno.land/x/cliffy@v0.25.2/command/mod.ts";
+import { Command, HelpCommand, ValidationError } from "https://deno.land/x/cliffy@v0.25.2/command/mod.ts";
 
 new Command()
   .name("rlog")
   .description("A command to create blog post template.")
   .version("0.1.2")
+  .default("help")
   .command("create", "Create blog post template.")
   .option("-t, --type <post-type>", "The post type(blog or contents).", {
     value: (value: string): string => {
@@ -17,6 +18,7 @@ new Command()
     }
   })
   .action((options) => create(options))
+  .command("help", new HelpCommand())
   .parse(Deno.args);
 
 const create = (options) => {
