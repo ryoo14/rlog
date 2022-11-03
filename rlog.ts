@@ -4,7 +4,7 @@ import { Command, HelpCommand, ValidationError } from "https://deno.land/x/cliff
 new Command()
   .name("rlog")
   .description("A command to create blog post template.")
-  .version("0.1.2")
+  .version("0.2.0")
   .default("help")
   .command("create", "Create blog post template.")
   .option("-t, --type <post-type>", "The post type(blog or contents).", {
